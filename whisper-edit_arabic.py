@@ -8,7 +8,7 @@ input_file = f"{input_directory}/{filename}"
 
 model_name = "large" # or whatever model you prefer
 model = whisper.load_model(model_name)
-result = model.transcribe(input_file)
+result = model.transcribe(input_file, source_language="ar")
 
 translation_model = whisper.load_model("translation")
 translation_result = translation_model.translate(transcription_result, target_language="en")
