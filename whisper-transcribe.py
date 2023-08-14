@@ -5,11 +5,12 @@ from whisper.utils import get_writer
 
 def main():
     filepath = input("What file do you want to transcribe?\n")
+    lang = input("What language do you want to transcribe to English? Input using ISO 639-1 codes. e.g Norwegian or no.\n")
     output_dir = os.path.dirname(filepath)
     print("Please wait...")
 
     model = whisper.load_model("large-v2")
-    result = model.transcribe(filepath, verbose=True, fp16=False, language="Norwegian", patience=2, beam_size=5)
+    result = model.transcribe(filepath, verbose=True, fp16=False, language=lang, patience=2, beam_size=5)
 
     # Generate output file name
     base_filename = os.path.splitext(os.path.basename(filepath))[0]

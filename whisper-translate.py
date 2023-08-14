@@ -4,8 +4,8 @@ import whisper
 from whisper.utils import get_writer
 
 def main():
-    filepath = input("What file do you want to transcribe?\n")
-    lang = input("What language do you want to transcribe to English? Input using ISO 639-1 codes. e.g Norwegian or no.\n")
+    filepath = input("What file do you want to translate?\n")
+    lang = input("What language do you want to translate to English? Input using ISO 639-1 codes. e.g Norwegian or no.\n")
     output_dir = os.path.dirname(filepath)
     print("Please wait...")
 
